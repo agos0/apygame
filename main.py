@@ -3,6 +3,7 @@ import pygame as pg, sys
 from pygame.locals import *
 from pygame.math import Vector2
 from pygame.time import delay
+import random
 
 def main():
     pg.init()
@@ -15,6 +16,7 @@ def main():
     black = 0, 0, 0
     white = 255, 255, 255
     blue = 0, 0, 255
+
 
     pg.display.set_caption("game test")
 

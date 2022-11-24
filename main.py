@@ -4,6 +4,7 @@ from pygame.locals import *
 from pygame.math import Vector2
 from pygame.time import delay
 import random
+from enemy import enemy
 
 def main():
     pg.init()
@@ -14,9 +15,7 @@ def main():
     window = pg.display.set_mode(size)
 
     black = 0, 0, 0
-    white = 255, 255, 255
-    blue = 0, 0, 255
-
+    red = 255, 0, 0
 
     pg.display.set_caption("game test")
 
@@ -37,7 +36,7 @@ def main():
 
         window.fill(black)
 
-        rect1 = pg.draw.rect(window, blue, (cx, cy, 75, 75))
+        rect1 = pg.draw.rect(window, red, (cx, cy, 75, 75))
         
         cx += velocity.x
         if cx + x_buffer > width:
@@ -53,6 +52,9 @@ def main():
             velocity.y = -3
         if cy < 0:
             velocity.y = 3    
+
+        enemy1 = enemy(200, 400)
+        enemy1.display(window)
 
         window.blit(window, rect1)
         pg.display.update()

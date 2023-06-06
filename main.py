@@ -10,8 +10,8 @@ def main():
     pg.init()
     
     size = width, height = 1000, 800
-    x_buffer = 535
-    y_buffer = 435
+    x_buffer = 65
+    y_buffer = 65
     window = pg.display.set_mode(size)
 
     black = 0, 0, 0
@@ -26,7 +26,7 @@ def main():
     velocity.x = 3
     velocity.y = 0
 
-    acceleration = 0.1
+    acceleration = 0.15
 
     while True:
         keys = pg.key.get_pressed()
@@ -35,6 +35,9 @@ def main():
                 sys.exit()
 
         window.fill(black)
+
+        enemy1 = enemy(200, 400, window)
+        enemy1.e_display()
 
         rect1 = pg.draw.rect(window, red, (cx, cy, 75, 75))
         
@@ -51,13 +54,8 @@ def main():
         if cy + y_buffer > height:
             velocity.y = -3
         if cy < 0:
-            velocity.y = 3    
-
-        enemy1 = enemy(200, 400)
-        enemy1.display(window)
-
-        window.blit(window, rect1)
-        pg.display.update()
+            velocity.y = 3
+    
         pg.display.flip()
         pg.time.delay(10)
 

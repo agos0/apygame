@@ -1,11 +1,10 @@
 import pygame
 import random
 class enemy:
-    def __init__(self, cx, cy):
-        self.cx = cx
-        self.cy = cy
+    def __init__(self, ex, ey, surface):
+        self.ex = ex
+        self.ey = ey
+        self.surface = surface
 
-    def display(self, surface):
-        pygame.draw.rect(surface, (0, 255, 0), (self.cx, self.cy, 45, 45))
-
-           
+    def e_display(self):
+        pygame.draw.rect(self.surface, (0, 255, 0), (self.ex, self.ey, 45, 45))

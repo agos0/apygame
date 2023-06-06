@@ -57,7 +57,7 @@ def main():
             velocity.y = 3
     
         pg.display.flip()
-        pg.time.delay(10)
+        pg.time.delay(8)
 
 if __name__ == "__main__":
     main()
